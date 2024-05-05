@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: eddi
+spec:
+  type: NodePort
+  ports:
+  - port: {{ .Values.eddi.port }}
+    targetPort: {{ .Values.eddi.port }}
+    nodePort: 30080
+  selector:
+    app: eddi
+

@@ -1,0 +1,17 @@
+eddi:
+  image: "117940112483.dkr.ecr.us-east-1.amazonaws.com/673f1c75-387e-47be-b0ce-467489ed2a85/cg-3750898086/labsai/eddi:4.8.3-latest"
+  port: 8080
+  env:
+    MONGO_USERNAME: admin
+    MONGO_PASSWORD: password
+    MONGO_HOST: mongo
+    MONGO_PORT: 27017
+    EDDI_ENV: production
+
+mongo:
+  image: "mongo:latest"
+  port: 27017
+  env:
+    MONGO_INITDB_ROOT_USERNAME: admin
+    MONGO_INITDB_ROOT_PASSWORD: password
+

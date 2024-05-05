@@ -1,0 +1,7 @@
+apiVersion: v2
+name: eddi-helm
+description: A Helm chart for Kubernetes to deploy EDDI with MongoDB
+type: application
+version: 0.1.0
+appVersion: "4.8.3"
+

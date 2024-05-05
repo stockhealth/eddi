@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eddi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eddi
+  template:
+    metadata:
+      labels:
+        app: eddi
+    spec:
+      containers:
+      - name: eddi
+        image: {{ .Values.eddi.image }}
+        ports:
+        - containerPort: {{ .Values.eddi.port }}
+        env:
+        - name: MONGO_USERNAME
+          value: {{ .Values.eddi.env.MONGO_USERNAME }}
+        - name: MONGO_PASSWORD
+          value: {{ .Values.eddi.env.MONGO_PASSWORD }}
+        - name: MONGO_HOST
+          value: {{ .Values.eddi.env.MONGO_HOST }}
+        - name: MONGO_PORT
+          value: "{{ .Values.eddi.env.MONGO_PORT }}"
+        - name: EDDI_ENV
+          value: {{ .Values.eddi.env.EDDI_ENV }}
+
