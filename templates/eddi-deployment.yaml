@@ -25,7 +25,6 @@ spec:
         - name: MONGO_HOST
           value: {{ .Values.eddi.env.MONGO_HOST }}
         - name: MONGO_PORT
-          value: "{{ .Values.eddi.env.MONGO_PORT }}"
+          value: {{ .Values.eddi.env.MONGO_PORT }}
         - name: EDDI_ENV
           value: {{ .Values.eddi.env.EDDI_ENV }}
-
