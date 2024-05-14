@@ -22,4 +22,3 @@ spec:
           value: {{ .Values.mongo.env.MONGO_INITDB_ROOT_USERNAME }}
         - name: MONGO_INITDB_ROOT_PASSWORD
           value: {{ .Values.mongo.env.MONGO_INITDB_ROOT_PASSWORD }}
-
