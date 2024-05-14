@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: mongo
 spec:
-  ports:
-  - port: {{ .Values.mongo.port }}
-    targetPort: {{ .Values.mongo.port }}
   selector:
     app: mongo
-
+  ports:
+    - protocol: TCP
+      port: {{ .Values.mongo.port }}
+      targetPort: {{ .Values.mongo.port }}
