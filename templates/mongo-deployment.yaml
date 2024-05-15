@@ -19,6 +19,6 @@ spec:
         - containerPort: {{ .Values.mongo.port }}
         env:
         - name: MONGO_INITDB_ROOT_USERNAME
-          value: {{ .Values.mongo.env.MONGO_INITDB_ROOT_USERNAME }}
+          value: {{ .Values.mongo.env.MONGO_INITDB_ROOT_USERNAME | quote }}
         - name: MONGO_INITDB_ROOT_PASSWORD
-          value: {{ .Values.mongo.env.MONGO_INITDB_ROOT_PASSWORD }}
+          value: {{ .Values.mongo.env.MONGO_INITDB_ROOT_PASSWORD | quote }}
