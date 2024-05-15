@@ -1,13 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: eddi
+  name: eddi-service
 spec:
-  type: NodePort
-  ports:
-  - port: {{ .Values.eddi.port }}
-    targetPort: {{ .Values.eddi.port }}
-    nodePort: 30080
   selector:
     app: eddi
-
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: {{ .Values.eddi.port }}
+  type: LoadBalancer
